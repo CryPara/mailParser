@@ -1,5 +1,9 @@
-
-
+/*
+ authors:
+ -Cristina Parasiliti Parracello
+ -Dario Safarally
+ -Roberta Maccarrone
+ */
 
 int create_db();  /*create the database */
 int select_db();  /*select the database */
@@ -64,7 +68,7 @@ void parse_file(char *f_path)
     char *tmp;
     fd=fopen(f_path, "r");
 
-    printf("\n\n File: %s\n", f_path);
+    printf("\n\n Processing file: %s\n", f_path);
 
     if(fd==NULL) 
     {
@@ -104,16 +108,16 @@ void add_address(char *addr)
     /*inserts an address in the Address table */
     if(mysql_query(&mysql,query_insert_address)==0 ) 
     {
-        printf("\n Added : %s",addr);
+        //printf("\n Added : %s",addr);
 	
 	/*insert address's domain_part in the Domain_part table */ 
 	mysql_query(&mysql,query_insert_domain_part);
 
     }
-    else
-    {
-        printf("\n Failed to insert: %s",addr);
-    }
+    //else
+    //{
+        //printf("\n Failed to insert: %s",addr);
+    //}
 
 }
 /*delete an address */
@@ -214,7 +218,7 @@ int export_db()
         strcat(path,"_valid_addresses");
 
         if(mkdir(path,S_IRWXU)==0 && chdir(path)==0)
-        {
+        {   gettimeofday(&start_time,NULL);
             int i,count_09=0,count_az=0;
 
             for(i='0'; i<='9'; i++)
@@ -233,6 +237,7 @@ int export_db()
                 returnValue=1; /*there is at least an email that starts with 0-9 or az */
             else
                 returnValue=-1; /*there is "mysql error" */
+                  time(start_time);
         }
         else
         {

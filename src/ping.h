@@ -1,3 +1,10 @@
+/*
+ authors:
+ -Cristina Parasiliti Parracello
+ -Dario Safarally
+ -Roberta Maccarrone
+ */
+
 /*function that pings all address within the database*/
 int ping()
 {
@@ -18,7 +25,7 @@ int ping()
             while ((row = mysql_fetch_row(result)))
             {
                 sprintf(ping,"ping -c 1 -w 5 www.%s",row[0]); /* -c: stop after sending count , -w: specify  a  timeout in seconds */
-	
+		gettimeofday(&start_time,NULL);
                 if(system (ping)!=0) 
 		{   /*error occurred */
                     printf("\n %s: NO PONG! \n",row[0]);
@@ -39,6 +46,7 @@ int ping()
                 else
 		  /*server responds */
                     printf("\n%s: PONG! \n",row[0]);
+		    time(start_time);
             }
         }
        

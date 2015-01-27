@@ -1,3 +1,9 @@
+/*
+ authors:
+ -Cristina Parasiliti Parracello
+ -Dario Safarally
+ -Roberta Maccarrone
+ */
 
 /*check if user's choice is right */
 void check_selection(char *choice, char n)

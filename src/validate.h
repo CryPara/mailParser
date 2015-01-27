@@ -1,3 +1,10 @@
+/*
+ authors:
+ -Cristina Parasiliti Parracello
+ -Dario Safarally
+ -Roberta Maccarrone
+ */
+
 /* check the validation of an address */
 int validate(char *address)
 {
@@ -65,10 +72,10 @@ int match (const char *s,char * regex)
 
     regex_t re;
 
-    if(regcomp(&re,regex,REG_EXTENDED|REG_NOSUB) != 0) /*compiles a pattern regex_t associated with my regex */
+    if(regcomp(&re,regex,REG_EXTENDED|REG_NOSUB) != 0) /*compilo un pattern regex_t associato alla mia regex */
         return -1;
 
-    if(regexec(&re,s,(size_t) 0, NULL, 0)) /* apply the pattern to the string passed (address)*/
+    if(regexec(&re,s,(size_t) 0, NULL, 0)) /* applico il pattern alla stringa passata (address)*/
     {
         regfree(&re);
         return 0; /* match not found: address is not valid */

@@ -6,7 +6,15 @@
 #include <ctype.h>
 #include <dirent.h>
 #include <sys/stat.h>
+/*
+ authors:
+ -Cristina Parasiliti Parracello
+ -Dario Safarally
+ -Roberta Maccarrone
+ */
+
 #include <unistd.h>
+#include <sys/time.h>
 
 #define BUFFER_LENGTH 200               
 #define EMAIL_MAX_LENGTH 90
@@ -26,11 +34,12 @@
 #define MALLOC 100
 #define PING_MAX_LENGTH 100
 
+struct timeval start_time;
 MYSQL mysql;
 FILE *fd;
 FILE *dm;
 FILE *exc;
-char delimiters[]=",<\">:[](){} ";
+char delimiters[]="\\,<\">:;[](){} ";
 char host[HOST_MAX_LENGTH];
 char user[USERNAME_MAX_LENGTH];
 char passw[PASSWORD_MAX_LENGTH];

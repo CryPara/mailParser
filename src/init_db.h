@@ -1,6 +1,13 @@
+/*
+ authors:
+ -Cristina Parasiliti Parracello
+ -Dario Safarally
+ -Roberta Maccarrone
+ */
+
 /*create the database*/
 int create_db()
-{
+{	
     sprintf(query_create_database,"CREATE DATABASE IF NOT EXISTS %s;",db_name);
     if(mysql_query(&mysql,query_create_database)==0)
     {
@@ -42,5 +49,6 @@ void create_table()
     {
         print_error("Failed to create new table Address\n");
     }
+    
 }
 

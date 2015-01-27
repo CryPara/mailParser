@@ -1,12 +1,12 @@
-/* 
-authors 
--Maccarrone Roberta
--Dario Safarally
--Parasiliti Parracello Cristina
-*/
-
+/*
+ authors:
+ -Cristina Parasiliti Parracello
+ -Dario Safarally
+ -Roberta Maccarrone
+ */
 
 #include "config.h"
+#include "time_calculation.h"
 #include "db.h"
 #include "init_db.h"
 #include "validate.h"
@@ -125,10 +125,12 @@ void menu()
             printf("\n 1.Select file path: ");
             scanf("%s",file_path);
             strcpy(fileformat,get_ext(file_path));
+	    gettimeofday(&start_time,NULL);
             if(strcmp(fileformat,"rtf") == 0 || strcmp(fileformat,"doc") ==0 ||strcmp(fileformat,"txt") ==0 ||strcmp(fileformat,"csv")== 0)
                 parse_file(file_path);
             else
                 read_directory(file_path);
+	    time(start_time);
 
         }
         else if(second_choice[0]=='2') /*insert an email address from keyboard*/
