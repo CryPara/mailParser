@@ -1,3 +1,10 @@
+/*
+ authors:
+ -Cristina Parasiliti Parracello
+ -Dario Safarally
+ -Roberta Maccarrone
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <mysql/mysql.h>
@@ -6,13 +13,6 @@
 #include <ctype.h>
 #include <dirent.h>
 #include <sys/stat.h>
-/*
- authors:
- -Cristina Parasiliti Parracello
- -Dario Safarally
- -Roberta Maccarrone
- */
-
 #include <unistd.h>
 #include <sys/time.h>
 
