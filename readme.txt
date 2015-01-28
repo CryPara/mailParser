@@ -6,9 +6,9 @@ MailParser
 
 Authors:
 
--Roberta Maccarrone
--Cristina Parasiliti
+-Cristina Parasiliti Parracello
 -Safarally Dario
+-Roberta Maccarrone
 
 
 Compile:
