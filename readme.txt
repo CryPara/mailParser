@@ -7,7 +7,7 @@ MailParser
 Authors:
 
 -Cristina Parasiliti Parracello
--Safarally Dario
+-Dario Safarally
 -Roberta Maccarrone
 
 
