@@ -26,7 +26,6 @@ int db_is_empty();/*check if database is empty */
 int ping(); /*pings of an address */
 void save_all(); /*saves all the addresses in the database in a single all_email.txt */
 void print_error(char *error);
-void read_file(char[255]); /*read the file */
 void count_ping_no_respons();/*counts the number of servers */
 
 /*read the file contains on a directory*/
