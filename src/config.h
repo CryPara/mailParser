@@ -16,7 +16,7 @@
 #include <unistd.h>
 #include <sys/time.h>
 
-#define BUFFER_LENGTH 200               
+#define BUFFER_LENGTH 50000             
 #define EMAIL_MAX_LENGTH 90
 #define LOCAL_PART_MIN_LENGTH 1
 #define LOCAL_PART_MAX_LENGTH 64
