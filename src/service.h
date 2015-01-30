@@ -44,7 +44,7 @@ int get_nr_addresses_start_with(char ch)
 
         if(strcmp(row[0],"0")==0) 
         {
-            printf("\n No address starts with %c!\n",ch);
+            //printf("\n No address starts with %c!\n",ch);
             returnValue=0;
         }
         else
